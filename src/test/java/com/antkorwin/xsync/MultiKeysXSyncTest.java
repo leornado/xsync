@@ -10,7 +10,6 @@ import java.util.stream.LongStream;
 import com.jupiter.tools.stress.test.concurrency.ExecutionMode;
 import com.jupiter.tools.stress.test.concurrency.StressTestRunner;
 import org.junit.jupiter.api.Test;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -321,19 +320,19 @@ public class MultiKeysXSyncTest {
 
 	@Test
 	void throwExceptionInFunction() {
-
-		Exception exception = null;
+		
+		Throwable exception = null;
 		try {
 			xsync.evaluate(Arrays.asList(123L), () -> {
 				// nop
-				throw new NotImplementedException();
+				throw new AbstractMethodError();
 			});
-		} catch (Exception e) {
+		} catch (Throwable e) {
 			exception = e;
 		}
 
 		assertThat(exception).isNotNull();
-		assertThat(exception.getClass()).isEqualTo(NotImplementedException.class);
+		assertThat(exception.getClass()).isEqualTo(AbstractMethodError.class);
 	}
 
 

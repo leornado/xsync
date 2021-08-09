@@ -3,8 +3,6 @@ package com.antkorwin.xsync;
 
 import java.util.concurrent.ConcurrentMap;
 
-import org.hibernate.validator.internal.util.ConcurrentReferenceHashMap;
-
 
 /**
  * Created on 14.06.2018.

@@ -10,7 +10,6 @@ import java.util.stream.IntStream;
 
 import com.antkorwin.commonutils.concurrent.ConcurrentSet;
 import com.antkorwin.commonutils.gc.GcUtils;
-import org.hibernate.validator.internal.util.ConcurrentReferenceHashMap;
 import org.junit.Test;
 
 import static java.util.stream.Collectors.toList;
